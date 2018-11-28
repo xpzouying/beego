@@ -186,7 +186,11 @@ func BuildTemplate(dir string, files ...string) error {
 	var err error
 	fs := beeTemplateFS()
 	f, err := fs.Open(dir)
-	defer f.Close()
+	defer func() {
+		if f != nil {
+			f.Close()
+		}
+	}()
 	if err != nil {
 		if os.IsNotExist(err) {
 			return nil

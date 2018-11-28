@@ -15,11 +15,11 @@
 package memcache
 
 import (
-	_ "github.com/bradfitz/gomemcache/memcache"
-
 	"strconv"
 	"testing"
 	"time"
+
+	_ "github.com/bradfitz/gomemcache/memcache"
 
 	"github.com/astaxie/beego/cache"
 )
